@@ -1,6 +1,7 @@
-package net.minecraft.client.gui;
+package com.rakion99.usernamemod;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.renderer.GlStateManager;
 
 public class Guinick2 extends GuiButton
