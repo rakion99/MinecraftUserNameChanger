@@ -16,7 +16,7 @@ public class Guinick2 extends GuiButton
     {
         if (this.visible)
         {
-            mc.getTextureManager().bindTexture(GuiButton.buttonTextures);
+            mc.getTextureManager().bindTexture(GuiButton.BUTTON_TEXTURES);
             GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
             boolean var4 = mouseX >= this.xPosition && mouseY >= this.yPosition && mouseX < this.xPosition + this.width && mouseY < this.yPosition + this.height;
             int var5 = 146;

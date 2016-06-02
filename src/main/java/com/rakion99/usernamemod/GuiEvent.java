@@ -10,18 +10,18 @@ public class GuiEvent
 	
 	@SubscribeEvent
     public void guiEvent(GuiScreenEvent.InitGuiEvent.Post event){
-    	GuiScreen gui = event.gui;
+    	GuiScreen gui = event.getGui();
     	int j = gui.height / 4 + 48;
     	if(gui instanceof GuiMainMenu){
-    		event.buttonList.add(new Guinick2(99, gui.width / 2 - 150, j + 72 + 12));
+    		event.getButtonList().add(new Guinick2(99, gui.width / 2 - 150, j + 72 + 12));
     	}
     }
 	
 	@SubscribeEvent
     public void onButtonClickPost(GuiScreenEvent.ActionPerformedEvent.Post event) {
-    	GuiScreen gui = event.gui;
+    	GuiScreen gui = event.getGui();
         if (gui instanceof GuiMainMenu) {
-            if (event.button.id == 99) {
+            if (event.getButton().id == 99) {
             	gui.mc.displayGuiScreen(new Guinick(gui));
             }
         }
