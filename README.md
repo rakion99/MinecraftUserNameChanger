@@ -1,3 +1,4 @@
+Current release for: Minecraft 1.10     
 # How to use:
 First you need a working MCP
 
