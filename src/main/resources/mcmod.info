@@ -1,15 +1,16 @@
+[
 {
-  "modListVersion": 2,
-  "modList": [{
-    "modid": "UserNameMod",
-    "name": "Ingame UserName Changer",
-    "description": "A simple mod to change your ingame username.",
-    "version": "1.4",
-    "mcversion": "1.9.4",
-    "url": "http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/2233908-ingame-username-change",
-    "updateUrl": "",
-    "authorList": [ "rakion99" ],
-    "credits": "Created by rakion99, Special Thanks to Thutmose for the help",
-    "logoFile": ""
-  }]
+  "modid": "usernamemod",
+  "name": "Ingame UserName Changer",
+  "description": "A simple mod to change your ingame username.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/2233908-ingame-username-change",
+  "updateUrl": "",
+  "authorList": ["rakion99"],
+  "credits": "Created by rakion99, Special Thanks to Thutmose for the help",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
 }
+]

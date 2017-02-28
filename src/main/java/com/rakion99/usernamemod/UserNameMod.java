@@ -17,20 +17,20 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 @Mod(modid = UserNameMod.MODID, version = UserNameMod.VERSION)
 public class UserNameMod
 {
-    public static final String MODID = "UserNameMod";
-    public static final String VERSION = "1.4";
+    public static final String MODID = "usernamemod";
+    public static final String VERSION = "1.5";
     
     @EventHandler
     public void init(FMLInitializationEvent event)
     {
-        System.out.println("<< UserNameMod Loaded >> ");
+        System.out.println("<< UserNameMod 1.5 Loaded >> ");
     }
     
     @EventHandler
 	public void preInit(FMLPreInitializationEvent event)  
     {
 		
-    	MinecraftForge.EVENT_BUS.register(new GuiEvent());
+    	MinecraftForge.EVENT_BUS.register(new UserNameEvent());
 		
 	}
     
