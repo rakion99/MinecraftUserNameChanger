@@ -1,7 +1,7 @@
 //find
 this.buttonList.add(new GuiButtonLanguage(5, this.width / 2 - 124, j + 72 + 12));
 //and below that add this
-this.buttonList.add(new Guinick2(99, this.width / 2 - 150, j + 72 + 12));
+this.buttonList.add(new UserNameBtn(99, this.width / 2 - 124, j + 36 + 12));
 //then find this
 if (button.id == 12)
 {
@@ -16,5 +16,5 @@ if (button.id == 12)
 //and below that add this
 if (button.id == 99)
 {
-	this.mc.displayGuiScreen(new Guinick(this));
+	this.mc.displayGuiScreen(new UserNameGui(this));
 }
