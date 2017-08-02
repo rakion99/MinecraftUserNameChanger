@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.Tessellator;
-import net.minecraft.client.renderer.VertexBuffer;
+import net.minecraft.client.renderer.BufferBuilder;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.util.ResourceLocation;
@@ -15,7 +15,7 @@ public class UserNameGui extends GuiScreen
 {
     private final GuiScreen parentScreen;
     private GuiTextField userNameField;
-    String version = "v1.5";
+    String version = "v1.6";
 
     public UserNameGui(GuiScreen parentScreen)
     {
@@ -91,22 +91,22 @@ protected static final ResourceLocation bg_texture = new ResourceLocation("textu
         GlStateManager.disableLighting();
         GlStateManager.disableFog();
         Tessellator tessellator = Tessellator.getInstance();
-        VertexBuffer vertexbuffer = tessellator.getBuffer();
+        BufferBuilder bufferbuilder = tessellator.getBuffer();
         this.mc.getTextureManager().bindTexture(bg_texture);
         GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
         float f = 32.0F;
-        vertexbuffer.begin(7, DefaultVertexFormats.POSITION_TEX_COLOR);
-        vertexbuffer.pos(0.0D, (double)this.height, 0.0D).tex(0.0D, (double)((float)this.height / 32.0F + (float)tint)).color(64, 64, 64, 255).endVertex();
-        vertexbuffer.pos((double)this.width, (double)this.height, 0.0D).tex((double)((float)this.width / 32.0F), (double)((float)this.height / 32.0F + (float)tint)).color(64, 64, 64, 255).endVertex();
-        vertexbuffer.pos((double)this.width, 0.0D, 0.0D).tex((double)((float)this.width / 32.0F), (double)tint).color(64, 64, 64, 255).endVertex();
-        vertexbuffer.pos(0.0D, 0.0D, 0.0D).tex(0.0D, (double)tint).color(64, 64, 64, 255).endVertex();
+        bufferbuilder.begin(7, DefaultVertexFormats.POSITION_TEX_COLOR);
+        bufferbuilder.pos(0.0D, (double)this.height, 0.0D).tex(0.0D, (double)((float)this.height / 32.0F + (float)tint)).color(64, 64, 64, 255).endVertex();
+        bufferbuilder.pos((double)this.width, (double)this.height, 0.0D).tex((double)((float)this.width / 32.0F), (double)((float)this.height / 32.0F + (float)tint)).color(64, 64, 64, 255).endVertex();
+        bufferbuilder.pos((double)this.width, 0.0D, 0.0D).tex((double)((float)this.width / 32.0F), (double)tint).color(64, 64, 64, 255).endVertex();
+        bufferbuilder.pos(0.0D, 0.0D, 0.0D).tex(0.0D, (double)tint).color(64, 64, 64, 255).endVertex();
         tessellator.draw();
     }
 
     public void drawScreen(int mouseX, int mouseY, float partialTicks)
     {
     	this.drawBackg(0);
-        this.drawCenteredString(this.fontRendererObj, I18n.format("Change User Name " + version, new Object[0]), this.width / 2, 17, 0xFF0000);
+        this.drawCenteredString(this.fontRendererObj, I18n.format("UserNameMod " + version, new Object[0]), this.width / 2, 17, 0xFF0000);
         this.drawString(this.fontRendererObj, I18n.format("Current User Name: " + this.mc.getSession().getUsername(), new Object[0]), this.width / 2 - 100, 53, 0x00FFFF);
         this.drawString(this.fontRendererObj, I18n.format("New Username(Max Lenght 30):", new Object[0]), this.width / 2 - 100, 93, 16777215);
         this.drawCenteredString(this.fontRendererObj, I18n.format("Mod by: rakion99", new Object[0]), this.width / 2, 150, 0x00FF00);
