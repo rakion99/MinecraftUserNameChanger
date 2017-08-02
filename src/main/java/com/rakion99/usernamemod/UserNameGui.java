@@ -7,7 +7,7 @@ import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.gui.GuiTextField;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.Tessellator;
-import net.minecraft.client.renderer.VertexBuffer;
+import net.minecraft.client.renderer.BufferBuilder;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.util.ResourceLocation;
@@ -18,7 +18,7 @@ public class UserNameGui extends GuiScreen
 {
     private final GuiScreen parentScreen;
     private GuiTextField userNameField;
-    String version = "v1.5";
+    String version = "v1.6";
 
     public UserNameGui(GuiScreen parentScreen)
     {
@@ -35,7 +35,7 @@ public class UserNameGui extends GuiScreen
         Keyboard.enableRepeatEvents(true);
         this.buttonList.add(new GuiButton(0, this.width / 2 - 50, this.height / 4 + 96 + 18, 100, 20, I18n.format("Change User name", new Object[0])));
         this.buttonList.add(new GuiButton(1, this.width / 2 - 50, this.height / 4 + 120 + 18, 100, 20, I18n.format("Done", new Object[0])));
-        this.userNameField = new GuiTextField(0, this.fontRendererObj, this.width / 2 - 100, 106, 190, 20);
+        this.userNameField = new GuiTextField(0, this.fontRenderer, this.width / 2 - 100, 106, 190, 20);
         this.userNameField.setFocused(true);
         this.userNameField.setMaxStringLength(30);
         this.userNameField.setTextColor(0xFFFF00);
@@ -95,7 +95,7 @@ public class UserNameGui extends GuiScreen
         GlStateManager.disableLighting();
         GlStateManager.disableFog();
         Tessellator tessellator = Tessellator.getInstance();
-        VertexBuffer vertexbuffer = tessellator.getBuffer();
+        BufferBuilder vertexbuffer = tessellator.getBuffer();
         this.mc.getTextureManager().bindTexture(bg_texture);
         GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
         float f = 32.0F;
@@ -110,10 +110,10 @@ public class UserNameGui extends GuiScreen
     public void drawScreen(int mouseX, int mouseY, float partialTicks)
     {
     	this.drawBackg(0);
-        this.drawCenteredString(this.fontRendererObj, I18n.format("Change User Name " + version, new Object[0]), this.width / 2, 17, 0xFF0000);
-        this.drawString(this.fontRendererObj, I18n.format("Current User Name: " + this.mc.getSession().getUsername(), new Object[0]), this.width / 2 - 100, 53, 0x00FFFF);
-        this.drawString(this.fontRendererObj, I18n.format("New Username(Max Lenght 30):", new Object[0]), this.width / 2 - 100, 93, 16777215);
-        this.drawCenteredString(this.fontRendererObj, I18n.format("Mod by: rakion99", new Object[0]), this.width / 2, 150, 0x00FF00);
+        this.drawCenteredString(this.fontRenderer, I18n.format("UserNameMod " + version, new Object[0]), this.width / 2, 17, 0xFF0000);
+        this.drawString(this.fontRenderer, I18n.format("Current User Name: " + this.mc.getSession().getUsername(), new Object[0]), this.width / 2 - 100, 53, 0x00FFFF);
+        this.drawString(this.fontRenderer, I18n.format("New Username(Max Lenght 30):", new Object[0]), this.width / 2 - 100, 93, 16777215);
+        this.drawCenteredString(this.fontRenderer, I18n.format("Mod by: rakion99", new Object[0]), this.width / 2, 150, 0x00FF00);
         this.userNameField.drawTextBox();
         super.drawScreen(mouseX, mouseY, partialTicks);
     }

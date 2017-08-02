@@ -8,28 +8,28 @@ import net.minecraft.util.ResourceLocation;
 public class UserNameBtn extends GuiButton
 {
 
-	protected static final ResourceLocation btn1_texture = new ResourceLocation("usernamemod/btn_1.png");
+	protected static final ResourceLocation btn1_texture = new ResourceLocation("rakion99/usernamemod/btn_1.png");
 	
     public UserNameBtn(int buttonID, int xPos, int yPos)
     {
         super(buttonID, xPos, yPos, 20, 20, "");
     }
 
-    public void drawButton(Minecraft mc, int mouseX, int mouseY)
+    public void drawButton(Minecraft mc, int mouseX, int mouseY, float partialTicks)
     {
-        if (this.visible)
+    	if (this.visible)
         {
             mc.getTextureManager().bindTexture(this.btn1_texture);
             GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
-            boolean var4 = mouseX >= this.xPosition && mouseY >= this.yPosition && mouseX < this.xPosition + this.width && mouseY < this.yPosition + this.height;
-            int var5 = 146;
+            boolean flag = mouseX >= this.x && mouseY >= this.y && mouseX < this.x + this.width && mouseY < this.y + this.height;
+            int txy = 146;
 
-            if (var4)
+            if (flag)
             {
-                var5 += this.height;
+                txy += this.height;
             }
 
-            this.drawTexturedModalRect(this.xPosition, this.yPosition, 0, var5, this.width, this.height);
+            this.drawTexturedModalRect(this.x, this.y, 0, txy, this.width, this.height);
         }
     }
 }
