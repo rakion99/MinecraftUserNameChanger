@@ -1,0 +1,17 @@
+{
+    "1.12.1": {
+        "v2.0": "unreleased :P",
+        "v1.6": "Changed Button to Multiplayer Screen"
+    },
+    "1.12": {
+        "v2.0": "unreleased :P",
+        "v1.6": "Changed Button to Multiplayer Screen"
+    },
+    "homepage": "http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/2233908-forge-jarmod-ingame-username-changer-now-with",
+    "promos": {
+        "1.12.1-latest": "v2.0",
+        "1.12.1-recommended": "v1.6",
+        "1.12-latest": "v2.0",
+        "1.12-recommended": "v1.6"
+    }
+}
