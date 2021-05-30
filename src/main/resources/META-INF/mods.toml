@@ -1,0 +1,22 @@
+modLoader="javafml"
+loaderVersion="[36,)"
+license="GNU GPL 3.0"
+[[mods]]
+modId="usernamemod"
+version="1.7"
+displayName="Ingame UserName Changer"
+credits="Created by rakion99, Special Thanks to Thutmose for the help"
+authors="rakion99"
+description="A simple mod to change your ingame username."
+[[dependencies.usernamemod]]
+    modId="forge"
+    mandatory=true
+    versionRange="[36,)"
+    ordering="NONE"
+    side="CLIENT"
+[[dependencies.usernamemod]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.16.5,1.17)"
+    ordering="NONE"
+    side="CLIENT"
